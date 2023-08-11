@@ -1,0 +1,43 @@
+@import "../../App.scss";
+
+.lobby {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  .title {
+    margin: 20px 0px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: rgb(200, 200, 200);
+  }
+
+  .waiting {
+    color: white;
+  }
+
+  .codeLinksContainer {
+    display: flex;
+    flex-direction: column;
+
+    .link {
+      color: black;
+      margin-bottom: 20px;
+      background-color: darkgray;
+      padding: 10px;
+      border-radius: 5px;
+      -webkit-box-shadow: 7px 7px 15px 4px rgba(255, 255, 255, 0.32);
+      -moz-box-shadow: 7px 7px 15px 4px rgba(255, 255, 255, 0.32);
+      box-shadow: 7px 7px 15px 4px rgba(255, 255, 255, 0.32);
+
+      @include mobile{
+        font-size: 20px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
