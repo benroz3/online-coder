@@ -1,4 +1,4 @@
-Online Coder fullstack app using Socket.io.
+Online Coder fullstack app using MERN & Socket.io.
 
 (Open 2 tabs - first is the mentor, second is the student)
 
