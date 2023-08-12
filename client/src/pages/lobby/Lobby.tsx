@@ -27,8 +27,8 @@ const Lobby: React.FC<{ socket: Socket }> = ({ socket }) => {
     //fetching all codeBlocks
     socket.on("codeBlocks", (fetchedCodeBlocks) => {
       dispatch(setCodeBlocks(fetchedCodeBlocks));
+      setIsLoading(false);
     });
-    setIsLoading(false);
   }, [socket, dispatch]);
 
   const { codeBlocks, isMentor } = useSelector(
