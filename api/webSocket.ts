@@ -22,7 +22,7 @@ const createWebSocketServer = (io: SocketIOServer) => {
     }
 
     //handling disconnections
-    socket.on("disconnect", async (codeBlockId, codeFromStudent) => {
+    socket.on("disconnect", async () => {
       if (socket === studentSocket) {
         console.log("Student disconnected.");
         studentSocket = null;
