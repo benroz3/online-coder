@@ -11,8 +11,6 @@ const Lobby: React.FC<{ socket: Socket }> = ({ socket }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
-
     //connection
     socket.on("connect", () => {
       console.log("Connected to socket server!");
@@ -26,6 +24,7 @@ const Lobby: React.FC<{ socket: Socket }> = ({ socket }) => {
 
     //fetching all codeBlocks
     socket.on("codeBlocks", (fetchedCodeBlocks) => {
+      setIsLoading(true);
       dispatch(setCodeBlocks(fetchedCodeBlocks));
       setIsLoading(false);
     });
