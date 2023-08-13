@@ -13,8 +13,10 @@ const Lobby: React.FC<{ socket: Socket }> = ({ socket }) => {
   useEffect(() => {
     //connection
     socket.on("connect", () => {
+      setIsLoading(true);
       console.log("Connected to socket server!");
       socket.emit("fetchCodeBlocks");
+      setIsLoading(false);
     });
 
     //setting mentor / student
@@ -24,9 +26,7 @@ const Lobby: React.FC<{ socket: Socket }> = ({ socket }) => {
 
     //fetching all codeBlocks
     socket.on("codeBlocks", (fetchedCodeBlocks) => {
-      setIsLoading(true);
       dispatch(setCodeBlocks(fetchedCodeBlocks));
-      setIsLoading(false);
     });
   }, [socket, dispatch]);
 
